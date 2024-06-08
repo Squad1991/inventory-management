@@ -6,7 +6,7 @@ const appRouter = createBrowserRouter([
   {
     path: '/',
     async lazy() {
-      let { default: HomePage } = await import('~src/pages/HomePage');
+      const { default: HomePage } = await import('~src/pages/HomePage');
       return { Component: HomePage };
     },
     errorElement: <ErrorBoundary />,
@@ -14,7 +14,7 @@ const appRouter = createBrowserRouter([
   {
     path: '*',
     async lazy() {
-      let { default: NotFoundPage } = await import('~src/pages/NotFoundPage');
+      const { default: NotFoundPage } = await import('~src/pages/NotFoundPage');
       return { Component: NotFoundPage };
     },
   },
