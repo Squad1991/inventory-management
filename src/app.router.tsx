@@ -1,15 +1,22 @@
+import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import HomePage from '~src/pages/HomePage';
-import NotFoundPage from '~src/pages/NotFoundPage';
+import ErrorBoundary from '~src/components/common/error-boundary/ErrorBoundary';
 
 const appRouter = createBrowserRouter([
   {
     path: '/',
-    Component: HomePage,
+    async lazy() {
+      let { default: HomePage } = await import('~src/pages/HomePage');
+      return { Component: HomePage };
+    },
+    errorElement: <ErrorBoundary />,
   },
   {
     path: '*',
-    Component: NotFoundPage,
+    async lazy() {
+      let { default: NotFoundPage } = await import('~src/pages/NotFoundPage');
+      return { Component: NotFoundPage };
+    },
   },
 ]);
 

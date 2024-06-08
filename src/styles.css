@@ -1,5 +1,31 @@
 @import '/node_modules/reset-css/reset.css';
 
 html {
-  font-size: 16px;
+  font-size: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  --color-background: #f0f0f0;
+  --color-background-default: #fff;
+  --z-index-header: 100;
+  --header-height: 2.5rem;
+  --color-border: #eaeaea;
+  --icon-color-default: #000;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #6c757d #ffffff;
+}
+
+.app-container {
+  height: 100vh;
 }
