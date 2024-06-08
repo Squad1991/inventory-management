@@ -26,6 +26,7 @@
   },
   "source": "src/index.html",
   "devDependencies": {
+    "@compiled/parcel-config": "^0.5.1",
     "@parcel/packager-ts": "2.12.0",
     "@parcel/transformer-svg-react": "^2.12.0",
     "@parcel/transformer-typescript-types": "2.12.0",
@@ -50,9 +51,12 @@
     "typescript-eslint": "^7.12.0"
   },
   "dependencies": {
+    "@compiled/react": "^0.17.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-icons": "^5.2.1",
     "react-router-dom": "^6.23.1",
+    "reset-css": "^5.0.2",
     "typescript": "^5.4.5"
   }
 }
