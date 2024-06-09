@@ -1,3 +1,4 @@
+import Tooltip from 'rc-tooltip';
 import React from 'react';
 
 interface TextOverflowProps {
@@ -6,7 +7,11 @@ interface TextOverflowProps {
 
 const TextOverflow: React.FC<TextOverflowProps> = ({ text }) => {
   return (
-    <div style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{text}</div>
+    <Tooltip mouseEnterDelay={0.5} placement="right" trigger={['hover']} overlay={text}>
+      <div style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+        {text}
+      </div>
+    </Tooltip>
   );
 };
 

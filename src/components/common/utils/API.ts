@@ -9,6 +9,7 @@ const fetchConfig = {
 
 export const fetchData = async <T>(config: { url: string }): Promise<T> => {
   const response = await fetch(config.url, fetchConfig);
+  if (!response.ok) throw new Response(response.statusText, { status: response.status });
   const result: T = await response.json();
   return result;
 };

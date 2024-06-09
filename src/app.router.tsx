@@ -54,6 +54,7 @@ const appRouter = createBrowserRouter([
     children: [
       {
         index: true,
+        errorElement: <ErrorBoundary />,
         loader: MovieInfoLoader,
         async lazy() {
           const { default: MovieInfoPage } = await import('~src/routes/movie/index');

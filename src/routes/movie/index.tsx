@@ -16,6 +16,7 @@ import MovieInfoLoader from '~src/routes/movie/Loader';
 
 const MovieInfoPage: React.FC = () => {
   const movieInfo = useLoaderData() as Awaited<ReturnType<typeof MovieInfoLoader>>;
+
   return (
     <Stack css={css({ gap: '1rem' })}>
       <img
@@ -25,10 +26,10 @@ const MovieInfoPage: React.FC = () => {
         css={css({ objectFit: 'contain', objectPosition: 'center', background: '#161515' })}
         src={`https://image.tmdb.org/t/p/original/${movieInfo.backdrop_path}`}
       />
-      <Stack css={css({ gap: '2rem' })}>
+      <Stack css={css({ gap: '2rem', paddingInline: '1.5rem' })}>
         <Stack css={css({ gap: '0.5rem' })}>
           <Stack css={css({ gap: '0.2rem' })}>
-            <h1>{movieInfo.original_title}</h1>
+            <h2>{movieInfo.original_title}</h2>
             <Inline
               css={css({ gap: '1rem', alignItems: 'center', color: '#605b5d', fontSize: '1.1rem' })}
             >
@@ -40,10 +41,12 @@ const MovieInfoPage: React.FC = () => {
                   .join('/')}
               </Box>
               <Rating rating={movieInfo.vote_average || 0} />
-              <IconContainer>
-                <FaCalendar />
-                <Box>{formatDate(new Date(movieInfo.release_date))}</Box>
-              </IconContainer>
+              {movieInfo.release_date && (
+                <IconContainer>
+                  <FaCalendar />
+                  <Box>{formatDate(new Date(movieInfo.release_date))}</Box>
+                </IconContainer>
+              )}
               <IconContainer>
                 <FaClock />
                 <Box>{convertTimeInHoursAndMinutes(movieInfo.runtime)}</Box>

@@ -10,7 +10,7 @@ const MovieInfoPageLayout: React.FC = () => {
   return (
     <PageLayout>
       <Header />
-      <Content css={css({ marginInline: '5rem', marginBlock: '1rem' })}>
+      <Content css={css({ marginBlock: '1rem' })}>
         <Main>
           <Outlet />
         </Main>

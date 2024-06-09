@@ -20,10 +20,14 @@ export function timeAgo(input: Date | string | number) {
   }
 }
 
-export const formatDate = (date: Date) =>
-  new Intl.DateTimeFormat('en-GB', {
+export const formatDate = (date: Date) => {
+  if (!(date instanceof Date)) {
+    return '-';
+  }
+  return new Intl.DateTimeFormat('en-GB', {
     dateStyle: 'long',
   }).format(date);
+};
 
 export function convertTimeInHoursAndMinutes(totalMinutes: number) {
   const hours = Math.floor(totalMinutes / 60);

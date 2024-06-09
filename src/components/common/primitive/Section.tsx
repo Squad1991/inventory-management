@@ -13,7 +13,7 @@ const SectionStyles = styled(Stack)({
 const Section: React.FC<SectionProps> = ({ heading, children }) => {
   return (
     <SectionStyles>
-      <h2>{heading}</h2>
+      <h3>{heading}</h3>
       {children}
     </SectionStyles>
   );

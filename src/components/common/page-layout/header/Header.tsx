@@ -2,6 +2,7 @@ import { css, styled } from '@compiled/react';
 import React from 'react';
 import { FaBell, FaCameraRetro, FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import IconContainer from '~src/components/common/primitive/IconContainer';
 import Inline from '~src/components/common/primitive/Inline';
 import MovieSearch from '~src/components/movie-search/MovieSearch';
 
@@ -22,17 +23,17 @@ const HeaderWrapper = styled.header({
 const Header: React.FC = () => {
   return (
     <HeaderWrapper>
-      <Inline css={css({ gap: '0.2rem' })}>
+      <IconContainer css={css({ fontSize: '1.5rem' })}>
         <FaCameraRetro />
         <Link to={'/'}>Movie Database</Link>
-      </Inline>
+      </IconContainer>
       <Inline css={css({ width: '28rem' })}>
         <MovieSearch />
       </Inline>
-      <Inline css={css({ alignItems: 'center', gap: '.8rem' })}>
+      <IconContainer>
         <FaBell />
         <FaUser />
-      </Inline>
+      </IconContainer>
     </HeaderWrapper>
   );
 };

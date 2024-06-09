@@ -1,7 +1,8 @@
 import { styled } from '@compiled/react';
 
 const Main = styled.main({
-  height: '100%',
+  overflowY: 'auto',
+  height: 'calc(100vh - var(--header-height))',
 });
 
 export default Main;

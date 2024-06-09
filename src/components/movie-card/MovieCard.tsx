@@ -18,7 +18,7 @@ interface MovieCardProps {
 const MovieCardContainer = styled.li({
   display: 'flex',
   flexDirection: 'column',
-  width: '16rem',
+  width: '18rem',
   cursor: 'pointer',
   borderRadius: '0.5rem',
   overflowY: 'auto',
@@ -28,6 +28,7 @@ const MovieCardContainer = styled.li({
 
 const MovieStatsStyles = css({
   gap: '.5rem',
+  fontSize: '0.75rem',
   alignItems: 'center',
   paddingBlock: '0.5rem',
   paddingInline: '1rem',
@@ -38,7 +39,7 @@ const MovieStatsStyles = css({
 
 const MovieCard: React.FC<MovieCardProps> = props => {
   const {
-    movie: { title, vote_count, popularity, vote_average, poster_path, release_date, id },
+    movie: { title, vote_count, vote_average, poster_path, release_date, id },
   } = props;
   const navigate = useNavigate();
   const goToMovieInfoPage = () => {
@@ -58,11 +59,13 @@ const MovieCard: React.FC<MovieCardProps> = props => {
         <Rating rating={vote_average} />
         <Votes votes={vote_count} />
       </Inline>
-      <Stack css={css({ gap: '.5rem', padding: '1rem' })}>
-        <h2>
+      <Stack css={css({ padding: '1rem' })}>
+        <h5>
           <TextOverflow text={title} />
-        </h2>
-        <Box>{formatDate(new Date(release_date))}</Box>
+        </h5>
+        {release_date && (
+          <Box css={css({ fontSize: '.7rem' })}>{formatDate(new Date(release_date))}</Box>
+        )}
       </Stack>
     </MovieCardContainer>
   );
