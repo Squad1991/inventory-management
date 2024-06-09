@@ -2,7 +2,7 @@ import { styled } from '@compiled/react';
 import React from 'react';
 import { FaHome, FaRegThumbsUp } from 'react-icons/fa';
 import { FaArrowTrendUp } from 'react-icons/fa6';
-import Box from '~src/components/common/primitive/Box';
+import { Link } from 'react-router-dom';
 
 const SidebarWrapper = styled.aside({
   backgroundColor: 'none',
@@ -40,15 +40,15 @@ const Sidebar: React.FC = () => {
       <SidebarSidebarList>
         <SidebarListItem>
           <FaHome />
-          <Box>Home</Box>
+          <Link to={'/'}>Home</Link>
         </SidebarListItem>
         <SidebarListItem>
           <FaArrowTrendUp />
-          <Box>Trending</Box>
+          <Link to={'/movies/trending'}>Trending</Link>
         </SidebarListItem>
         <SidebarListItem>
           <FaRegThumbsUp />
-          <Box>Recommended</Box>
+          <Link to={'/movies/recommended'}>Recommended</Link>
         </SidebarListItem>
       </SidebarSidebarList>
     </SidebarWrapper>

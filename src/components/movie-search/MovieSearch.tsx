@@ -33,6 +33,7 @@ const customStyles = {
   }),
   control: (base: CSSObjectWithLabel) => ({
     ...base,
+    borderRadius: '2rem',
     height: 25,
     minHeight: 25,
   }),
@@ -54,7 +55,7 @@ const DropdownIndicator = (props: DropdownIndicatorProps<MovieOption, true>) => 
 
 const MovieSearch = () => (
   <AsyncSelect
-    placeholder="Search for a movie..."
+    placeholder="Search movie by name..."
     components={{ DropdownIndicator }}
     css={css({
       width: '100%',

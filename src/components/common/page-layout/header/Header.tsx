@@ -1,7 +1,7 @@
 import { css, styled } from '@compiled/react';
 import React from 'react';
 import { FaBell, FaCameraRetro, FaUser } from 'react-icons/fa';
-import Box from '~src/components/common/primitive/Box';
+import { Link } from 'react-router-dom';
 import Inline from '~src/components/common/primitive/Inline';
 import MovieSearch from '~src/components/movie-search/MovieSearch';
 
@@ -24,7 +24,7 @@ const Header: React.FC = () => {
     <HeaderWrapper>
       <Inline css={css({ gap: '0.2rem' })}>
         <FaCameraRetro />
-        <Box>Movie Database</Box>
+        <Link to={'/'}>Movie Database</Link>
       </Inline>
       <Inline css={css({ width: '28rem' })}>
         <MovieSearch />
