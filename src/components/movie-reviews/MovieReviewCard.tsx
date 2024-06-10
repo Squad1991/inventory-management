@@ -34,7 +34,7 @@ const MovieReviewCard: React.FC<MovieReviewCardProps> = props => {
       <Inline css={css({ justifyContent: 'space-between' })}>
         <Inline css={css({ gap: '1rem', alignItems: 'center' })}>
           <Box>
-            <Avatar imageUrl={review.author_details.avatar_path} altText={review.author} />
+            <Avatar imageUrl={review.author_details.avatar_path} title={review.author} />
           </Box>
           <Stack>
             <Box>{review.author}</Box>

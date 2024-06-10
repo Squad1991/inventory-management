@@ -2,21 +2,20 @@ import React from 'react';
 import { FaUserCircle } from 'react-icons/fa';
 import MoviePoster from '~src/components/movie-poster/MoviePoster';
 
-interface AvatarProps {
+interface AvatarProps extends React.HTMLAttributes<HTMLImageElement> {
   imageUrl: string;
-  altText: string;
   size?: number;
 }
 
-const Avatar: React.FC<AvatarProps> = ({ imageUrl, altText, size = 30 }) => {
+const Avatar: React.FC<AvatarProps> = ({ imageUrl, size = 30, ...rest }) => {
   return (
     <MoviePoster
       width={size}
       height={size}
       src={imageUrl}
-      alt={altText}
       fallback={<FaUserCircle size={size} />}
       style={{ width: size, height: size, borderRadius: '50%' }}
+      {...rest}
     />
   );
 };

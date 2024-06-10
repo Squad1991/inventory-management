@@ -5,6 +5,7 @@
     "target": "es2021",
     "jsx": "react",
     "rootDir": ".",
+    "allowJs": true,
     "module": "CommonJS",
     "esModuleInterop": true,
     "baseUrl": "./",

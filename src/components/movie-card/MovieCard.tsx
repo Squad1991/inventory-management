@@ -53,7 +53,7 @@ const MovieCard: React.FC<MovieCardProps> = props => {
           overflow: 'hidden',
         })}
       >
-        <MoviePoster src={poster_path} alt={title} />
+        <MoviePoster width={250} height={200} src={poster_path} alt={title} />
       </Box>
       <Inline css={MovieStatsStyles}>
         <Rating rating={vote_average} />
