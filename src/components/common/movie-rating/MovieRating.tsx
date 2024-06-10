@@ -6,7 +6,7 @@ const Rating = ({ rating, maxRating = 10 }: { rating: number; maxRating?: number
   return (
     <IconContainer>
       <FaStar color="red" />
-      {`${rating % 1 !== 0 ? rating.toFixed(1) : rating} / ${maxRating}`}
+      {rating === 0 ? 'NA' : `${rating % 1 !== 0 ? rating.toFixed(1) : rating} / ${maxRating}`}
     </IconContainer>
   );
 };
