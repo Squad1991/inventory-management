@@ -6,6 +6,13 @@ html {
   font-size: 14px;
 }
 
+html,
+body {
+  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -39,11 +46,6 @@ a.active {
 * {
   scrollbar-width: thin;
   scrollbar-color: #6c757d #ffffff;
-}
-
-.app-container {
-  height: 100vh;
-  overflow-x: hidden;
 }
 
 h1 {
