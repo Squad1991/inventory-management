@@ -27,8 +27,8 @@ const MovieInfo: React.FC<MovieInfoProps> = props => {
         alt={original_title}
         height={400}
         fallback={
-          <Box css={css({ background: '#161515', color: '#fff' })}>
-            <EmptyCard height="24rem" message={'No Image Found'} />
+          <Box css={css({ background: '#e8e8e8' })}>
+            <EmptyCard height="24rem" message={'Image Not Available'} />
           </Box>
         }
         css={css({ objectFit: 'contain', objectPosition: 'center', background: '#161515' })}
