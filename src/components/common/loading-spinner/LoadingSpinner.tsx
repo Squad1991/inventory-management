@@ -1,29 +1,19 @@
-import { css } from '@compiled/react';
+import { styled } from '@compiled/react';
 import React from 'react';
-import { FiCommand } from 'react-icons/fi';
-import Box from '~src/components/common/primitive/Box';
+import { FiLoader } from 'react-icons/fi';
+import Center from '~src/components/common/primitive/Center';
 
-const SpinnerStyles = css({
-  display: 'flex',
-  position: 'absolute',
-  top: 0,
-  bottom: 0,
-  left: 0,
-  right: 0,
-  justifyContent: 'center',
-  alignItems: 'center',
-  height: '100%',
+const SpinnerStyles = styled(Center)({
   color: 'var(--icon-color-default)',
-  fontSize: '1.5rem',
   animation: 'loading-animation 2s infinite',
 });
 
-const LoadingSpinner: React.FC = () => {
+const AppLoadingSpinner: React.FC = () => {
   return (
-    <Box css={SpinnerStyles}>
-      <FiCommand />
-    </Box>
+    <SpinnerStyles>
+      <FiLoader size={'2rem'} />
+    </SpinnerStyles>
   );
 };
 
-export default LoadingSpinner;
+export default AppLoadingSpinner;

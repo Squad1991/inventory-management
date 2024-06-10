@@ -1,13 +1,12 @@
 import { styled } from '@compiled/react';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import EmptyCard from '~src/components/common/primitive/EmptyCard';
 import Stack from '~src/components/common/primitive/Stack';
-import { fetchData } from '~src/components/common/utils/API';
 import MovieReviewCard from '~src/components/movie-reviews/MovieReviewCard';
-import { MovieReviewReponse } from '~src/routes/movie/types';
+import { MovieReview } from '~src/routes/movie/types';
 
 interface MovieReviewsProps {
-  movieId: number;
+  reviews: MovieReview[];
 }
 
 const StyledMovieReview = styled(Stack)({
@@ -15,18 +14,7 @@ const StyledMovieReview = styled(Stack)({
 });
 
 const MovieReviews: React.FC<MovieReviewsProps> = props => {
-  const { movieId } = props;
-  const [reviews, setReviews] = useState<MovieReviewReponse['results']>([]);
-  const fetchReviews = async (movieId: number) => {
-    const { results = [] } = await fetchData<MovieReviewReponse>({
-      url: `https://api.themoviedb.org/3/movie/${movieId}/reviews`,
-    });
-    setReviews(results);
-  };
-
-  useEffect(() => {
-    fetchReviews(movieId);
-  }, [movieId]);
+  const { reviews } = props;
 
   if (!reviews.length) {
     return <EmptyCard message="No reviews found" />;

@@ -3,7 +3,6 @@ import React, { PropsWithChildren } from 'react';
 import Box from '~src/components/common/primitive/Box';
 
 const CenterStyles = css({
-  display: 'flex',
   position: 'absolute',
   top: 0,
   bottom: 0,

@@ -8,7 +8,7 @@ const appRouter = createBrowserRouter([
   {
     path: '/',
     async lazy() {
-      const { default: RootLayout } = await import('~src/routes/home/Layout');
+      const { default: RootLayout } = await import('~src/routes/root/Root');
       return { Component: RootLayout };
     },
     errorElement: <ErrorBoundary />,
@@ -20,6 +20,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: 'movies',
+        caseSensitive: true,
         loader: HomePageDataLoader,
         async lazy() {
           const { default: HomePage } = await import('~src/routes/home');
@@ -42,33 +43,24 @@ const appRouter = createBrowserRouter([
           return { Component: TrendingMovies };
         },
       },
-    ],
-  },
-  {
-    path: 'movie/:id',
-    errorElement: <ErrorBoundary />,
-    async lazy() {
-      const { default: MovieInfoPageLayout } = await import('~src/routes/movie/Layout');
-      return { Component: MovieInfoPageLayout };
-    },
-    children: [
       {
-        index: true,
-        errorElement: <ErrorBoundary />,
+        path: 'movie/:id',
+        caseSensitive: true,
         loader: MovieInfoLoader,
+        errorElement: <ErrorBoundary />,
         async lazy() {
           const { default: MovieInfoPage } = await import('~src/routes/movie/index');
           return { Component: MovieInfoPage };
         },
       },
+      {
+        path: '*',
+        async lazy() {
+          const { default: NotFoundPage } = await import('~src/routes/NotFoundPage');
+          return { Component: NotFoundPage };
+        },
+      },
     ],
-  },
-  {
-    path: '*',
-    async lazy() {
-      const { default: NotFoundPage } = await import('~src/routes/NotFoundPage');
-      return { Component: NotFoundPage };
-    },
   },
 ]);
 

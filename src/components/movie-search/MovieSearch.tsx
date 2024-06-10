@@ -15,6 +15,7 @@ import Stack from '~src/components/common/primitive/Stack';
 import TextOverflow from '~src/components/common/primitive/TextOverflow';
 import { fetchData } from '~src/components/common/utils/API';
 import { formatDate } from '~src/components/common/utils/date-utils';
+import MoviePoster from '~src/components/movie-poster/MoviePoster';
 import { Movie, PaginatedResponse } from '~src/routes/home/types';
 
 interface MovieOption {
@@ -68,17 +69,19 @@ const CustomOption = (props: OptionProps<MovieOption>) => {
         display: 'flex',
         overflowX: 'hidden',
         borderBlockEnd: '1px solid #e0e0e0',
+        paddingBlockStart: '0.5rem',
+        paddingInlineStart: '0.5rem',
+        paddingBlockEnd: '0.5rem',
         cursor: 'pointer',
       })}
       onClick={() => props.selectOption(props.data)}
       {...props}
     >
-      <img
-        css={css({ objectFit: 'contain', flex: 0 })}
+      <MoviePoster
         width={70}
         height={70}
-        alt=""
-        src={`https://image.tmdb.org/t/p/original${props.data.value.poster_path || props.data.value.backdrop_path}`}
+        alt={props.data.value.original_title}
+        src={`${props.data.value.poster_path || props.data.value.backdrop_path}`}
       />
       <Stack>
         <TextOverflow text={props.data.value.original_title} />
@@ -92,6 +95,7 @@ const CustomOption = (props: OptionProps<MovieOption>) => {
 
 const MovieSearch = () => {
   const navigate = useNavigate();
+
   const loadMovie = async (inputValue: string, callback: (options: MovieOption[]) => void) => {
     if (!inputValue || inputValue.length < 3) {
       return Promise.resolve([]);
@@ -105,9 +109,11 @@ const MovieSearch = () => {
       value: movie,
     }));
   };
+
   const navigateToMovie = (option: SingleValue<MovieOption>) => {
     navigate(`/movie/${option?.value.id}`);
   };
+
   return (
     <AsyncSelect
       placeholder="Search movie by name..."

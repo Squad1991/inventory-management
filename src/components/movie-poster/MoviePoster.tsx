@@ -1,19 +1,15 @@
-import { css } from '@compiled/react';
 import React from 'react';
+import Image from '~src/components/common/image/Image';
 
-interface MoviePosterProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-  title: string;
-  imageUrl: string;
-}
+type MoviePosterProps = React.ComponentProps<typeof Image>;
 
-const MoviePoster: React.FC<MoviePosterProps> = ({ title, imageUrl }) => {
+const MoviePoster: React.FC<MoviePosterProps> = ({ src, ...rest }) => {
   return (
-    <img
-      css={css({ flex: 1, objectFit: 'contain', background: '#161515' })}
+    <Image
       width={'100%'}
       height={'100%'}
-      src={`https://image.tmdb.org/t/p/original/${imageUrl}`}
-      alt={title}
+      src={`https://image.tmdb.org/t/p/original/${src}`}
+      {...rest}
     />
   );
 };

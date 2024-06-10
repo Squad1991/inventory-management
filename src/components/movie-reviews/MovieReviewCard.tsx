@@ -14,8 +14,6 @@ interface MovieReviewCardProps {
   review: MovieReview;
 }
 
-const MaxRating = 10;
-
 const StyledMovieReviewCard = styled(Card)({
   display: 'flex',
   flexDirection: 'column',
@@ -26,8 +24,13 @@ const StyledMovieReviewCard = styled(Card)({
 
 const MovieReviewCard: React.FC<MovieReviewCardProps> = props => {
   const { review } = props;
+
+  const openReview = () => {
+    window.open(`https://www.themoviedb.org/review/${review.id}`, '_blank');
+  };
+
   return (
-    <StyledMovieReviewCard>
+    <StyledMovieReviewCard onClick={openReview}>
       <Inline css={css({ justifyContent: 'space-between' })}>
         <Inline css={css({ gap: '1rem', alignItems: 'center' })}>
           <Box>

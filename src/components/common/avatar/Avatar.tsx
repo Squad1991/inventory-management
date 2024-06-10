@@ -1,4 +1,6 @@
 import React from 'react';
+import { FaUserCircle } from 'react-icons/fa';
+import MoviePoster from '~src/components/movie-poster/MoviePoster';
 
 interface AvatarProps {
   imageUrl: string;
@@ -8,9 +10,12 @@ interface AvatarProps {
 
 const Avatar: React.FC<AvatarProps> = ({ imageUrl, altText, size = 30 }) => {
   return (
-    <img
-      src={`https://image.tmdb.org/t/p/original${imageUrl}`}
+    <MoviePoster
+      width={size}
+      height={size}
+      src={imageUrl}
       alt={altText}
+      fallback={<FaUserCircle size={size} />}
       style={{ width: size, height: size, borderRadius: '50%' }}
     />
   );

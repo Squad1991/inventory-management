@@ -43,7 +43,7 @@ const MovieCard: React.FC<MovieCardProps> = props => {
   } = props;
   const navigate = useNavigate();
   const goToMovieInfoPage = () => {
-    navigate(`/movie/${id}`);
+    navigate(`/movie/${id}`, { preventScrollReset: false });
   };
   return (
     <MovieCardContainer onClick={goToMovieInfoPage}>
@@ -53,7 +53,7 @@ const MovieCard: React.FC<MovieCardProps> = props => {
           overflow: 'hidden',
         })}
       >
-        <MoviePoster imageUrl={poster_path} title="" />
+        <MoviePoster src={poster_path} alt={title} />
       </Box>
       <Inline css={MovieStatsStyles}>
         <Rating rating={vote_average} />

@@ -1,5 +1,4 @@
 import { styled } from '@compiled/react';
-import Tooltip from 'rc-tooltip';
 import React from 'react';
 
 interface VerticalTextOverflowProps extends React.PropsWithChildren {
@@ -15,11 +14,7 @@ const VerticalTextOverflowWrapper = styled.div<VerticalTextOverflowProps>({
 });
 
 const VerticalTextOverflow: React.FC<VerticalTextOverflowProps> = ({ children, maxLines }) => {
-  return (
-    <Tooltip mouseEnterDelay={0.5} placement="top" trigger={['hover']} overlay={children}>
-      <VerticalTextOverflowWrapper maxLines={maxLines}>{children}</VerticalTextOverflowWrapper>
-    </Tooltip>
-  );
+  return <VerticalTextOverflowWrapper maxLines={maxLines}>{children}</VerticalTextOverflowWrapper>;
 };
 
 export default VerticalTextOverflow;

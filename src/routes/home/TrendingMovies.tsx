@@ -1,8 +1,8 @@
 import React from 'react';
-import Box from '~src/components/common/primitive/Box';
+import Center from '~src/components/common/primitive/Center';
 
 export const RecommendedMovies: React.FC = () => {
-  return <Box>Trending Movies Coming Soon</Box>;
+  return <Center>Trending Movies Coming Soon</Center>;
 };
 
 export default RecommendedMovies;

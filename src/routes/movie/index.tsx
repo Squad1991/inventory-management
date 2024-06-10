@@ -1,67 +1,34 @@
 import { css } from '@compiled/react';
-import React from 'react';
-import { FaCalendar } from 'react-icons/fa';
-import { FaClock } from 'react-icons/fa6';
-import { useLoaderData } from 'react-router-dom';
-import Rating from '~src/components/common/movie-rating/MovieRating';
-import Box from '~src/components/common/primitive/Box';
-import IconContainer from '~src/components/common/primitive/IconContainer';
-import Inline from '~src/components/common/primitive/Inline';
+import React, { Suspense } from 'react';
+import { Await, useLoaderData } from 'react-router-dom';
 import Section from '~src/components/common/primitive/Section';
 import Stack from '~src/components/common/primitive/Stack';
-import { convertTimeInHoursAndMinutes, formatDate } from '~src/components/common/utils/date-utils';
+import MovieInfo from '~src/components/movie-info/MovieInfo';
 import MovieReviews from '~src/components/movie-reviews/MovieReviews';
 import SimilarMovies from '~src/components/similar-movies/SimilarMovies';
-import MovieInfoLoader from '~src/routes/movie/Loader';
+import { MovieInfoLoaderData } from '~src/routes/movie/Loader';
+import MovieInfoPageSkelton from '~src/routes/movie/Skeleton';
 
 const MovieInfoPage: React.FC = () => {
-  const movieInfo = useLoaderData() as Awaited<ReturnType<typeof MovieInfoLoader>>;
+  const { reviews, movieInfo, similarMovies } = useLoaderData() as MovieInfoLoaderData;
 
   return (
-    <Stack css={css({ gap: '1rem' })}>
-      <img
-        width={'100%'}
-        alt=""
-        height={400}
-        css={css({ objectFit: 'contain', objectPosition: 'center', background: '#161515' })}
-        src={`https://image.tmdb.org/t/p/original/${movieInfo.backdrop_path}`}
-      />
-      <Stack css={css({ gap: '2rem', paddingInline: '1.5rem' })}>
-        <Stack css={css({ gap: '0.5rem' })}>
-          <Stack css={css({ gap: '0.2rem' })}>
-            <h2>{movieInfo.original_title}</h2>
-            <Inline
-              css={css({ gap: '1rem', alignItems: 'center', color: '#605b5d', fontSize: '1.1rem' })}
-            >
-              <Box>
-                {movieInfo.genres
-                  .map(genre => {
-                    return genre.name;
-                  })
-                  .join('/')}
-              </Box>
-              <Rating rating={movieInfo.vote_average || 0} />
-              {movieInfo.release_date && (
-                <IconContainer>
-                  <FaCalendar />
-                  <Box>{formatDate(new Date(movieInfo.release_date))}</Box>
-                </IconContainer>
-              )}
-              <IconContainer>
-                <FaClock />
-                <Box>{convertTimeInHoursAndMinutes(movieInfo.runtime)}</Box>
-              </IconContainer>
-            </Inline>
-          </Stack>
-          <Box css={css({ lineHeight: 'var(--line-height)' })}>{movieInfo.overview}</Box>
-        </Stack>
-        <Section heading="Top Reviews">
-          <MovieReviews movieId={movieInfo.id} />
-        </Section>
+    <Stack css={css({ gap: '2rem', position: 'relative' })}>
+      <Suspense fallback={<MovieInfoPageSkelton />}>
+        <Await resolve={movieInfo}>{movieInfo => <MovieInfo movie={movieInfo} />}</Await>
+        <Await resolve={reviews}>
+          {reviews => (
+            <Section heading="Top Reviews">
+              <MovieReviews reviews={reviews.results} />
+            </Section>
+          )}
+        </Await>
         <Section heading="You might also like">
-          <SimilarMovies movieId={movieInfo.id} />
+          <Await resolve={similarMovies}>
+            {similarMovies => <SimilarMovies movies={similarMovies.results} />}
+          </Await>
         </Section>
-      </Stack>
+      </Suspense>
     </Stack>
   );
 };
