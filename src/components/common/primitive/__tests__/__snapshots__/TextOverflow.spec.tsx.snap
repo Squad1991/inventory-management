@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TextOverflow > should match snapshot 1`] = `
+<div>
+  <div
+    style="width: 1px;"
+  >
+    <div
+      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+    >
+      Lorem ipsum dolor sit ametLorem ipsum dolor sit amet
+    </div>
+  </div>
+</div>
+`;

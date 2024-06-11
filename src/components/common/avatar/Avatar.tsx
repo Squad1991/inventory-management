@@ -7,6 +7,11 @@ interface AvatarProps extends React.HTMLAttributes<HTMLImageElement> {
   size?: number;
 }
 
+/**
+ * Renders the avatar component. This is specific to the application.
+ * Renders fallback icon if image is not available.
+ */
+
 const Avatar: React.FC<AvatarProps> = ({ imageUrl, size = 30, ...rest }) => {
   return (
     <MoviePoster

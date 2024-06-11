@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Center component > should render correctly 1`] = `
+<div>
+  <style
+    data-cmpld="true"
+  >
+    ._1bah1h6o{justify-content:center}._4cvr1h6o{align-items:center}._4t3i1osq{height:100%}
+  </style>
+  <style
+    data-cmpld="true"
+  >
+    ._1e0c1txw{display:flex}
+  </style>
+  <div
+    class="_1e0c1txw _1bah1h6o _4cvr1h6o _4t3i1osq"
+  >
+    Hello, World!
+  </div>
+</div>
+`;

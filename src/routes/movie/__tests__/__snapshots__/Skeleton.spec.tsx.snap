@@ -1,0 +1,167 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Skeleton > should render correctly 1`] = `
+<div>
+  <style
+    data-cmpld="true"
+  >
+    ._zulpviql{gap:2rem}._kqswh2mm{position:relative}._vwz41k8s{line-height:1.5rem}
+  </style>
+  <style
+    data-cmpld="true"
+  >
+    ._1e0c1txw{display:flex}._2lx21bp4{flex-direction:column}
+  </style>
+  <div
+    class="_1e0c1txw _2lx21bp4 _zulpviql _kqswh2mm _vwz41k8s"
+  >
+    <div
+      class="_1e0c1txw _2lx21bp4"
+    >
+      <span
+        aria-busy="true"
+        aria-live="polite"
+      >
+        <span
+          class="react-loading-skeleton"
+          style="width: 100%; height: 300px;"
+        >
+          ‌
+        </span>
+        <br />
+      </span>
+      <span
+        aria-busy="true"
+        aria-live="polite"
+      >
+        <span
+          class="react-loading-skeleton"
+          style="width: 20%; height: 10px;"
+        >
+          ‌
+        </span>
+        <br />
+      </span>
+      <span
+        aria-busy="true"
+        aria-live="polite"
+      >
+        <span
+          class="react-loading-skeleton"
+          style="width: 40%; height: 10px;"
+        >
+          ‌
+        </span>
+        <br />
+      </span>
+      <span
+        aria-busy="true"
+        aria-live="polite"
+      >
+        <span
+          class="react-loading-skeleton"
+          style="height: 10px;"
+        >
+          ‌
+        </span>
+        <br />
+        <span
+          class="react-loading-skeleton"
+          style="height: 10px;"
+        >
+          ‌
+        </span>
+        <br />
+        <span
+          class="react-loading-skeleton"
+          style="height: 10px;"
+        >
+          ‌
+        </span>
+        <br />
+      </span>
+    </div>
+    <div
+      class="_1e0c1txw _2lx21bp4"
+    >
+      <span
+        aria-busy="true"
+        aria-live="polite"
+      >
+        <span
+          class="react-loading-skeleton"
+          style="width: 20%; height: 10px;"
+        >
+          ‌
+        </span>
+        <br />
+      </span>
+      <span
+        aria-busy="true"
+        aria-live="polite"
+      >
+        <span
+          class="react-loading-skeleton"
+          style="height: 60px;"
+        >
+          ‌
+        </span>
+        <br />
+        <span
+          class="react-loading-skeleton"
+          style="height: 60px;"
+        >
+          ‌
+        </span>
+        <br />
+        <span
+          class="react-loading-skeleton"
+          style="height: 60px;"
+        >
+          ‌
+        </span>
+        <br />
+      </span>
+    </div>
+    <div
+      class="_1e0c1txw _2lx21bp4"
+    >
+      <span
+        aria-busy="true"
+        aria-live="polite"
+      >
+        <span
+          class="react-loading-skeleton"
+          style="width: 20%; height: 10px;"
+        >
+          ‌
+        </span>
+        <br />
+      </span>
+      <span
+        aria-busy="true"
+        aria-live="polite"
+      >
+        <span
+          class="react-loading-skeleton"
+          style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+        >
+          ‌
+        </span>
+        <span
+          class="react-loading-skeleton"
+          style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+        >
+          ‌
+        </span>
+        <span
+          class="react-loading-skeleton"
+          style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+        >
+          ‌
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+`;

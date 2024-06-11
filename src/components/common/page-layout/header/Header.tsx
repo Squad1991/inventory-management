@@ -25,8 +25,8 @@ const Header: React.FC = () => {
         <MovieSearch />
       </Inline>
       <IconContainer>
-        <FaBell size={16} />
-        <FaUser size={16} />
+        <FaBell data-testid="bell-icon" size={16} />
+        <FaUser data-testid="user-icon" size={16} />
       </IconContainer>
     </HeaderWrapper>
   );

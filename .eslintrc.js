@@ -15,7 +15,6 @@ module.exports = {
     'prettier',
     '@typescript-eslint',
     'unused-imports',
-    'jest',
   ],
   env: {
     es6: true,
@@ -68,6 +67,5 @@ module.exports = {
         ignoreRestSiblings: true,
       },
     ],
-    'jest/no-large-snapshots': ['error', { maxSize: 1200 }],
   },
 };

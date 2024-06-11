@@ -1,8 +1,9 @@
 import React from 'react';
-import Center from '~src/components/common/primitive/Center';
+import EmptyCard from '~src/components/common/primitive/EmptyCard';
+import WorkInProgress from '~src/components/common/work-in-progress/WorkInProgress';
 
 export const RecommendedMovies: React.FC = () => {
-  return <Center>Trending Movies Coming Soon</Center>;
+  return <EmptyCard message={<WorkInProgress width={'100%'} height={'400'} />} />;
 };
 
 export default RecommendedMovies;

@@ -45,12 +45,12 @@ const MovieInfo: React.FC<MovieInfoProps> = props => {
             {release_date && (
               <IconContainer>
                 <FaCalendar />
-                <Box>{formatDate(new Date(release_date))}</Box>
+                <Box data-testid="movie-release-date">{formatDate(new Date(release_date))}</Box>
               </IconContainer>
             )}
             <IconContainer>
               <FaClock />
-              <Box>{convertTimeInHoursAndMinutes(runtime)}</Box>
+              <Box data-testid="movie-runtime">{convertTimeInHoursAndMinutes(runtime)}</Box>
             </IconContainer>
           </Inline>
         </Stack>

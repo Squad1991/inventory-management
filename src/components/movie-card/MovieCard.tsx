@@ -8,10 +8,11 @@ import Inline from '~src/components/common/primitive/Inline';
 import Stack from '~src/components/common/primitive/Stack';
 import TextOverflow from '~src/components/common/primitive/TextOverflow';
 import { formatDate } from '~src/components/common/utils/date-utils';
+import { ComponentPropsWithTestId } from '~src/components/common/utils/types';
 import MoviePoster from '~src/components/movie-poster/MoviePoster';
 import { Movie } from '~src/routes/home/types';
 
-interface MovieCardProps {
+interface MovieCardProps extends ComponentPropsWithTestId {
   movie: Movie;
 }
 
@@ -37,8 +38,14 @@ const MovieStatsStyles = css({
   borderTop: '1px solid #4a4646',
 });
 
+const MoviePosterContainerStyles = css({
+  height: '200px',
+  overflow: 'hidden',
+});
+
 const MovieCard: React.FC<MovieCardProps> = props => {
   const {
+    testId,
     movie: { title, vote_count, vote_average, poster_path, release_date, id },
   } = props;
   const navigate = useNavigate();
@@ -46,13 +53,8 @@ const MovieCard: React.FC<MovieCardProps> = props => {
     navigate(`/movie/${id}`, { preventScrollReset: false });
   };
   return (
-    <MovieCardContainer onClick={goToMovieInfoPage}>
-      <Box
-        css={css({
-          height: '200px',
-          overflow: 'hidden',
-        })}
-      >
+    <MovieCardContainer data-testid={testId} onClick={goToMovieInfoPage}>
+      <Box css={MoviePosterContainerStyles}>
         <MoviePoster width={250} height={200} src={poster_path} alt={title} />
       </Box>
       <Inline css={MovieStatsStyles}>
@@ -61,10 +63,12 @@ const MovieCard: React.FC<MovieCardProps> = props => {
       </Inline>
       <Stack css={css({ padding: '1rem' })}>
         <h5>
-          <TextOverflow text={title} />
+          <TextOverflow testId="movie-title" text={title} />
         </h5>
         {release_date && (
-          <Box css={css({ fontSize: '.7rem' })}>{formatDate(new Date(release_date))}</Box>
+          <Box data-testid="release-date" css={css({ fontSize: '.7rem' })}>
+            {formatDate(new Date(release_date))}
+          </Box>
         )}
       </Stack>
     </MovieCardContainer>

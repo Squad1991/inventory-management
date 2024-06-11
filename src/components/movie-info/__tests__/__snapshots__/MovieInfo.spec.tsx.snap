@@ -1,0 +1,142 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MovieInfo > renders movie information correctly 1`] = `
+<div>
+  <style
+    data-cmpld="true"
+  >
+    ._zulp1j6v{gap:1rem}._kqswh2mm{position:relative}
+  </style>
+  <style
+    data-cmpld="true"
+  >
+    ._1e0c1txw{display:flex}._2lx21bp4{flex-direction:column}
+  </style>
+  <div
+    class="_1e0c1txw _2lx21bp4 _zulp1j6v _kqswh2mm"
+  >
+    <style
+      data-cmpld="true"
+    >
+      ._5ral1f51{-o-object-fit:contain;object-fit:contain}._rsuf1h6o{-o-object-position:center;object-position:center}._bfhk16q3{background-color:#161515}
+    </style>
+    <img
+      alt="Dummy title"
+      class="_5ral1f51 _rsuf1h6o _bfhk16q3"
+      height="400"
+      src="https://image.tmdb.org/t/p/original/dummy.jpg"
+    />
+    <style
+      data-cmpld="true"
+    >
+      ._zulp1kwk{gap:.5rem}
+    </style>
+    <div
+      class="_1e0c1txw _2lx21bp4 _zulp1kwk"
+    >
+      <style
+        data-cmpld="true"
+      >
+        ._zulp1rrh{gap:.2rem}
+      </style>
+      <div
+        class="_1e0c1txw _2lx21bp4 _zulp1rrh"
+      >
+        <h2>
+          Dummy title
+        </h2>
+        <style
+          data-cmpld="true"
+        >
+          ._4cvr1h6o{align-items:center}._syazk4hp{color:#605b5d}._1wyb17ve{font-size:1.1rem}
+        </style>
+        <style
+          data-cmpld="true"
+        >
+          ._2lx2vrvc{flex-direction:row}
+        </style>
+        <div
+          class="_1e0c1txw _2lx2vrvc _zulp1j6v _4cvr1h6o _syazk4hp _1wyb17ve"
+        >
+          <div
+            class="_1e0c1txw _2lx2vrvc"
+          >
+            Action/Adventure
+          </div>
+          <div
+            class="_1e0c1txw _4cvr1h6o _zulp1kwk"
+          >
+            <svg
+              color="red"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: red;"
+              viewBox="0 0 576 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+              />
+            </svg>
+            7.5 / 10
+          </div>
+          <div
+            class="_1e0c1txw _4cvr1h6o _zulp1kwk"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 448 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 192h424c6.6 0 12 5.4 12 12v260c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V204c0-6.6 5.4-12 12-12zm436-44v-36c0-26.5-21.5-48-48-48h-48V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H160V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v36c0 6.6 5.4 12 12 12h424c6.6 0 12-5.4 12-12z"
+              />
+            </svg>
+            <div
+              class="_1e0c1txw"
+              data-testid="movie-release-date"
+            >
+              1 January 2021
+            </div>
+          </div>
+          <div
+            class="_1e0c1txw _4cvr1h6o _zulp1kwk"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 512 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"
+              />
+            </svg>
+            <div
+              class="_1e0c1txw"
+              data-testid="movie-runtime"
+            >
+              2h 0m
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="_1e0c1txw"
+      >
+        Dummy overview
+      </div>
+    </div>
+  </div>
+</div>
+`;

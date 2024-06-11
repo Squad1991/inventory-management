@@ -9,7 +9,8 @@ interface SimilarMoviesProps {
 
 const SimilarMovies: React.FC<SimilarMoviesProps> = props => {
   const { movies } = props;
-  if (movies.length === 0) return <EmptyCard message="No similar movies found " />;
+  if (movies.length === 0)
+    return <EmptyCard testId="no-similar-movies" message="No similar movies found " />;
   return <MovieList movies={movies} />;
 };
 

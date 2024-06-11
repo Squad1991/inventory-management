@@ -21,9 +21,6 @@ export function timeAgo(input: Date | string | number) {
 }
 
 export const formatDate = (date: Date) => {
-  if (!(date instanceof Date)) {
-    return '-';
-  }
   return new Intl.DateTimeFormat('en-GB', {
     dateStyle: 'long',
   }).format(date);

@@ -1,7 +1,8 @@
 import { styled } from '@compiled/react';
 import React from 'react';
+import { ComponentPropsWithTestId } from '~src/components/common/utils/types';
 
-interface VerticalTextOverflowProps extends React.PropsWithChildren {
+interface VerticalTextOverflowProps extends React.PropsWithChildren, ComponentPropsWithTestId {
   maxLines: number;
 }
 
@@ -13,8 +14,16 @@ const VerticalTextOverflowWrapper = styled.div<VerticalTextOverflowProps>({
   '-webkit-box-orient': 'vertical',
 });
 
-const VerticalTextOverflow: React.FC<VerticalTextOverflowProps> = ({ children, maxLines }) => {
-  return <VerticalTextOverflowWrapper maxLines={maxLines}>{children}</VerticalTextOverflowWrapper>;
+const VerticalTextOverflow: React.FC<VerticalTextOverflowProps> = ({
+  children,
+  maxLines,
+  testId,
+}) => {
+  return (
+    <VerticalTextOverflowWrapper data-testid={testId} maxLines={maxLines}>
+      {children}
+    </VerticalTextOverflowWrapper>
+  );
 };
 
 export default VerticalTextOverflow;

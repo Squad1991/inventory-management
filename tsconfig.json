@@ -1,10 +1,12 @@
 {
   "include": ["src/**/*"],
+  "files": ["src/typings/index.d.ts"],
   "exclude": ["tsconfig.*.json", "node_modules"],
   "compilerOptions": {
     "target": "es2021",
     "jsx": "react",
     "rootDir": ".",
+    "skipLibCheck": true,
     "allowJs": true,
     "module": "CommonJS",
     "esModuleInterop": true,

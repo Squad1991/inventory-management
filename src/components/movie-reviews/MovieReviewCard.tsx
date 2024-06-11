@@ -8,9 +8,10 @@ import Inline from '~src/components/common/primitive/Inline';
 import Stack from '~src/components/common/primitive/Stack';
 import VerticalTextOverflow from '~src/components/common/primitive/VerticalTextOverflow';
 import { timeAgo } from '~src/components/common/utils/date-utils';
+import { ComponentPropsWithTestId } from '~src/components/common/utils/types';
 import { MovieReview } from '~src/routes/movie/types';
 
-interface MovieReviewCardProps {
+interface MovieReviewCardProps extends ComponentPropsWithTestId {
   review: MovieReview;
 }
 
@@ -23,25 +24,25 @@ const StyledMovieReviewCard = styled(Card)({
 });
 
 const MovieReviewCard: React.FC<MovieReviewCardProps> = props => {
-  const { review } = props;
+  const { review, testId } = props;
 
   const openReview = () => {
     window.open(`https://www.themoviedb.org/review/${review.id}`, '_blank');
   };
 
   return (
-    <StyledMovieReviewCard onClick={openReview}>
+    <StyledMovieReviewCard data-testid={testId} onClick={openReview}>
       <Inline css={css({ justifyContent: 'space-between' })}>
         <Inline css={css({ gap: '1rem', alignItems: 'center' })}>
-          <Box>
-            <Avatar imageUrl={review.author_details.avatar_path} title={review.author} />
-          </Box>
+          <Avatar imageUrl={review.author_details.avatar_path} title={review.author} />
           <Stack>
-            <Box>{review.author}</Box>
-            <Box>{timeAgo(review.updated_at)}</Box>
+            <Box data-testid="author">{review.author}</Box>
+            <Box data-testid="date-updated">{timeAgo(review.updated_at)}</Box>
           </Stack>
         </Inline>
-        <Rating rating={review.author_details.rating || 0} />
+        {review.author_details.rating && (
+          <Rating testId="movie-rating" rating={review.author_details.rating} />
+        )}
       </Inline>
       <VerticalTextOverflow maxLines={2}>{review.content}</VerticalTextOverflow>
     </StyledMovieReviewCard>

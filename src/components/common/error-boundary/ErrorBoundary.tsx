@@ -1,22 +1,20 @@
 import React from 'react';
-import { Link, isRouteErrorResponse, useRouteError } from 'react-router-dom';
-import Box from '~src/components/common/primitive/Box';
+import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
+import SomethingWentWrong from '~src/components/common/generic-error/GenericError';
 import Center from '~src/components/common/primitive/Center';
-import Stack from '~src/components/common/primitive/Stack';
+import NotFoundPage from '~src/routes/NotFoundPage';
+
+/**
+ * Renders an error message based on the error status.
+ * Renders generic error message if its not an route error.
+ */
 
 const RootErrorBoundary = () => {
   const error = useRouteError();
 
   if (isRouteErrorResponse(error)) {
     if (error.status === 404) {
-      return (
-        <Center>
-          <Stack>
-            This page or a resource doesn't exist!
-            <Link to="/">Go back to home</Link>
-          </Stack>
-        </Center>
-      );
+      return <NotFoundPage />;
     }
 
     if (error.status === 401) {
@@ -32,7 +30,7 @@ const RootErrorBoundary = () => {
     }
   }
 
-  return <Box>Something went wrong</Box>;
+  return <SomethingWentWrong />;
 };
 
 export default RootErrorBoundary;

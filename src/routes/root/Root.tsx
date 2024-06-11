@@ -8,6 +8,10 @@ import Main from '~src/components/common/page-layout/main/Main';
 import Navbar from '~src/components/common/page-layout/navbar/Navbar';
 import Stack from '~src/components/common/primitive/Stack';
 
+/**
+ * This is a root component that wraps the entire application.
+ * It contains the header, navbar, main content, and footer and slot for routes.
+ */
 const Root: React.FC = () => {
   return (
     <PageLayout>

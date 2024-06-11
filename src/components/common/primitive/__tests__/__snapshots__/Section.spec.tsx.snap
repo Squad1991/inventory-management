@@ -1,0 +1,32 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Section > should render correctly 1`] = `
+<div>
+  <style
+    data-cmpld="true"
+  >
+    ._zulp1j6v{gap:1rem}
+  </style>
+  <style
+    data-cmpld="true"
+  >
+    ._1e0c1txw{display:flex}._2lx21bp4{flex-direction:column}
+  </style>
+  <div
+    class="_1e0c1txw _2lx21bp4 _zulp1j6v"
+  >
+    <h3>
+      My header
+    </h3>
+    <div>
+      1
+    </div>
+    <div>
+      2
+    </div>
+    <div>
+      3
+    </div>
+  </div>
+</div>
+`;

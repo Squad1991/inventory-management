@@ -1,17 +1,23 @@
-import { styled } from '@compiled/react';
+import { css, styled } from '@compiled/react';
 import React from 'react';
 import { FiLoader } from 'react-icons/fi';
-import Center from '~src/components/common/primitive/Center';
 
-const SpinnerStyles = styled(Center)({
+const SpinnerStyles = styled.div({
   color: 'var(--icon-color-default)',
-  animation: 'loading-animation 2s infinite',
+  margin: '0',
+  position: 'absolute',
+  zIndex: 1000,
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
 });
+
+const LoadingAnimationCSS = css({ animation: 'spin-animation 1s infinite' });
 
 const AppLoadingSpinner: React.FC = () => {
   return (
     <SpinnerStyles>
-      <FiLoader size={'2rem'} />
+      <FiLoader css={LoadingAnimationCSS} size={'3rem'} />
     </SpinnerStyles>
   );
 };

@@ -4,6 +4,7 @@
 
 html {
   font-size: 14px;
+  background-color: var(--color-background);
 }
 
 html,
@@ -67,4 +68,13 @@ h4 {
 h5 {
   font-size: 1.125rem;
   line-height: 1.125rem;
+}
+@keyframes spin-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

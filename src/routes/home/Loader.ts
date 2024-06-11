@@ -1,11 +1,8 @@
 import { defer } from 'react-router-dom';
-import { fetchData } from '~src/components/common/utils/API';
-import { MovieReponse } from '~src/routes/home/types';
+import { getPopularMovies } from '~src/components/common/utils/api';
 
 const HomePageDataLoader = async () => {
-  const data = fetchData<MovieReponse>({
-    url: 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1',
-  });
+  const data = getPopularMovies();
   return defer({ data });
 };
 

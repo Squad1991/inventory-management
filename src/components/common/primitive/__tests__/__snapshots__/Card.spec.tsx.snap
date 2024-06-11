@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Card component > should match the snapshot 1`] = `
+<div>
+  <style
+    data-cmpld="true"
+  >
+    ._19itl2jy{border:1px solid #e0e0e0}._2rko1rrh{border-radius:.2rem}._16qsd8sd{box-shadow:0 0 10px rgba(0,0,0,.1)}
+  </style>
+  <style
+    data-cmpld="true"
+  >
+    ._1e0c1txw{display:flex}
+  </style>
+  <div
+    class="_1e0c1txw _19itl2jy _2rko1rrh _16qsd8sd"
+  >
+    Hello
+  </div>
+</div>
+`;

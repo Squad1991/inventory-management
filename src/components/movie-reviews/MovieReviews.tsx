@@ -17,13 +17,13 @@ const MovieReviews: React.FC<MovieReviewsProps> = props => {
   const { reviews } = props;
 
   if (!reviews.length) {
-    return <EmptyCard message="No reviews found" />;
+    return <EmptyCard testId="no-movies-msg" message="No reviews found" />;
   }
 
   return (
     <StyledMovieReview>
       {reviews.map(review => (
-        <MovieReviewCard key={review.id} review={review} />
+        <MovieReviewCard testId={`review-${review.id}`} key={review.id} review={review} />
       ))}
     </StyledMovieReview>
   );

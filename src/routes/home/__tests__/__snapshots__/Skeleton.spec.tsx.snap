@@ -1,0 +1,157 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Skeleton > should render correctly 1`] = `
+<div>
+  <style
+    data-cmpld="true"
+  >
+    ._zulp1kwk{gap:.5rem}._kqswh2mm{position:relative}._vwz41k8s{line-height:1.5rem}
+  </style>
+  <style
+    data-cmpld="true"
+  >
+    ._1e0c1txw{display:flex}._2lx21bp4{flex-direction:column}
+  </style>
+  <div
+    class="_1e0c1txw _2lx21bp4 _zulp1kwk _kqswh2mm _vwz41k8s"
+  >
+    <span
+      aria-busy="true"
+      aria-live="polite"
+    >
+      <span
+        class="react-loading-skeleton"
+        style="width: 20%; height: 10px;"
+      >
+        ‌
+      </span>
+      <br />
+    </span>
+    <span
+      aria-busy="true"
+      aria-live="polite"
+    >
+      <span
+        class="react-loading-skeleton"
+        style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+      >
+        ‌
+      </span>
+      <span
+        class="react-loading-skeleton"
+        style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+      >
+        ‌
+      </span>
+      <span
+        class="react-loading-skeleton"
+        style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+      >
+        ‌
+      </span>
+      <span
+        class="react-loading-skeleton"
+        style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+      >
+        ‌
+      </span>
+      <span
+        class="react-loading-skeleton"
+        style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+      >
+        ‌
+      </span>
+      <span
+        class="react-loading-skeleton"
+        style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+      >
+        ‌
+      </span>
+      <span
+        class="react-loading-skeleton"
+        style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+      >
+        ‌
+      </span>
+      <span
+        class="react-loading-skeleton"
+        style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+      >
+        ‌
+      </span>
+      <span
+        class="react-loading-skeleton"
+        style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+      >
+        ‌
+      </span>
+      <span
+        class="react-loading-skeleton"
+        style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+      >
+        ‌
+      </span>
+      <span
+        class="react-loading-skeleton"
+        style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+      >
+        ‌
+      </span>
+      <span
+        class="react-loading-skeleton"
+        style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+      >
+        ‌
+      </span>
+      <span
+        class="react-loading-skeleton"
+        style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+      >
+        ‌
+      </span>
+      <span
+        class="react-loading-skeleton"
+        style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+      >
+        ‌
+      </span>
+      <span
+        class="react-loading-skeleton"
+        style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+      >
+        ‌
+      </span>
+      <span
+        class="react-loading-skeleton"
+        style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+      >
+        ‌
+      </span>
+      <span
+        class="react-loading-skeleton"
+        style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+      >
+        ‌
+      </span>
+      <span
+        class="react-loading-skeleton"
+        style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+      >
+        ‌
+      </span>
+      <span
+        class="react-loading-skeleton"
+        style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+      >
+        ‌
+      </span>
+      <span
+        class="react-loading-skeleton"
+        style="margin-inline-end: 1rem; width: 20rem; height: 200px;"
+      >
+        ‌
+      </span>
+    </span>
+  </div>
+</div>
+`;

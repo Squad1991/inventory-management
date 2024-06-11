@@ -1,0 +1,24 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Inline component > should match the snapshot 1`] = `
+<div>
+  <style
+    data-cmpld="true"
+  >
+    ._1e0c1txw{display:flex}._2lx2vrvc{flex-direction:row}
+  </style>
+  <div
+    class="_1e0c1txw _2lx2vrvc"
+  >
+    <div>
+      1
+    </div>
+    <div>
+      2
+    </div>
+    <div>
+      3
+    </div>
+  </div>
+</div>
+`;

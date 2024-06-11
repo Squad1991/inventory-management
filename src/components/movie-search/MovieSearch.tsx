@@ -13,10 +13,10 @@ import AsyncSelect from 'react-select/async';
 import Box from '~src/components/common/primitive/Box';
 import Stack from '~src/components/common/primitive/Stack';
 import TextOverflow from '~src/components/common/primitive/TextOverflow';
-import { fetchData } from '~src/components/common/utils/API';
+import { searchMovies } from '~src/components/common/utils/api';
 import { formatDate } from '~src/components/common/utils/date-utils';
 import MoviePoster from '~src/components/movie-poster/MoviePoster';
-import { Movie, PaginatedResponse } from '~src/routes/home/types';
+import { Movie } from '~src/routes/home/types';
 
 interface MovieOption {
   label: string;
@@ -100,9 +100,7 @@ const MovieSearch = () => {
     if (!inputValue || inputValue.length < 3) {
       return Promise.resolve([]);
     }
-    const { results } = await fetchData<PaginatedResponse<Movie>>({
-      url: `https://api.themoviedb.org/3/search/movie?query=${inputValue}`,
-    });
+    const { results } = await searchMovies({ query: inputValue });
 
     return results.map(movie => ({
       label: movie.title,
