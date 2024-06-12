@@ -6,4 +6,4 @@ const Votes = ({ votes }: { votes: number }) => {
   return <Inline css={css({ alignItems: 'center', gap: '0.5rem' })}>{votes} Votes</Inline>;
 };
 
-export default Votes;
+export default React.memo(Votes);

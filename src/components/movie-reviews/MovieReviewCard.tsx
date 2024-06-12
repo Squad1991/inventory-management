@@ -49,4 +49,4 @@ const MovieReviewCard: React.FC<MovieReviewCardProps> = props => {
   );
 };
 
-export default MovieReviewCard;
+export default React.memo(MovieReviewCard);

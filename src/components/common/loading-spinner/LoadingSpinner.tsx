@@ -22,4 +22,4 @@ const AppLoadingSpinner: React.FC = () => {
   );
 };
 
-export default AppLoadingSpinner;
+export default React.memo(AppLoadingSpinner);

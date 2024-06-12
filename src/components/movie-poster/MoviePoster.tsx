@@ -7,4 +7,4 @@ const MoviePoster: React.FC<MoviePosterProps> = ({ src, ...rest }) => {
   return <Image src={`${AppUrls.IMAGE}/${src}`} {...rest} />;
 };
 
-export default MoviePoster;
+export default React.memo(MoviePoster);

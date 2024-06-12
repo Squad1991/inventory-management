@@ -5,4 +5,4 @@ const PageLayout = styled.div({
   backgroundColor: 'var(--color-background)',
 });
 
-export default PageLayout;
+export default React.memo(PageLayout);

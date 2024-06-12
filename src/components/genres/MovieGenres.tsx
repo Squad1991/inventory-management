@@ -18,4 +18,4 @@ const MovieGenres: React.FC<MovieGenresProps> = ({ genres }) => {
   );
 };
 
-export default MovieGenres;
+export default React.memo(MovieGenres);

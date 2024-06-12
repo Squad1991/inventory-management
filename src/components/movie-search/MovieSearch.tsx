@@ -133,4 +133,4 @@ const MovieSearch = () => {
   );
 };
 
-export default MovieSearch;
+export default React.memo(MovieSearch);

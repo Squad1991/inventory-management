@@ -23,4 +23,4 @@ const EmptyCard: React.FC<EmptyCardProps> = ({ message, height, width, testId })
   );
 };
 
-export default EmptyCard;
+export default React.memo(EmptyCard);

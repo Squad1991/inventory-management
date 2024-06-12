@@ -5,4 +5,4 @@ const Stack = styled.div({
   flexDirection: 'column',
 });
 
-export default Stack;
+export default React.memo(Stack);

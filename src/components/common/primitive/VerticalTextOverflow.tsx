@@ -26,4 +26,4 @@ const VerticalTextOverflow: React.FC<VerticalTextOverflowProps> = ({
   );
 };
 
-export default VerticalTextOverflow;
+export default React.memo(VerticalTextOverflow);

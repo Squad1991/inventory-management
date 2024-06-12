@@ -4,4 +4,4 @@ const Grid = styled.div({
   display: 'grid',
 });
 
-export default Grid;
+export default React.memo(Grid);

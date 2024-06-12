@@ -2,4 +2,4 @@ import { styled } from '@compiled/react';
 
 const Main = styled.main({});
 
-export default Main;
+export default React.memo(Main);

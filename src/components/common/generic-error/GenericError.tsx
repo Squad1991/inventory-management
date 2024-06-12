@@ -23,4 +23,4 @@ const SomethingWentWrong: React.FC<GenericErrorProps> = props => {
   );
 };
 
-export default SomethingWentWrong;
+export default React.memo(SomethingWentWrong);

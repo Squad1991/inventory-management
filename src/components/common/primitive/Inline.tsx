@@ -5,4 +5,4 @@ const Inline = styled.div({
   flexDirection: 'row',
 });
 
-export default Inline;
+export default React.memo(Inline);

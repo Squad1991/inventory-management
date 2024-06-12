@@ -4,4 +4,4 @@ const Box = styled.div({
   display: 'flex',
 });
 
-export default Box;
+export default React.memo(Box);

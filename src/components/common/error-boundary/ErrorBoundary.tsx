@@ -33,4 +33,4 @@ const RootErrorBoundary = () => {
   return <SomethingWentWrong />;
 };
 
-export default RootErrorBoundary;
+export default React.memo(RootErrorBoundary);

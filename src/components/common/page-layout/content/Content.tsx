@@ -6,4 +6,4 @@ const Content = styled.div({
   backgroundColor: 'white',
 });
 
-export default Content;
+export default React.memo(Content);

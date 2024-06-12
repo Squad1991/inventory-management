@@ -18,4 +18,4 @@ const HomePageSkelton: React.FC = () => {
   );
 };
 
-export default HomePageSkelton;
+export default React.memo(HomePageSkelton);

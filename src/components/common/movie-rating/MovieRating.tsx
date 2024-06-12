@@ -17,4 +17,4 @@ const Rating: React.FC<RatingProps> = ({ rating, maxRating = 10, testId }) => {
   );
 };
 
-export default Rating;
+export default React.memo(Rating);

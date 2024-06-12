@@ -89,4 +89,4 @@ const NotFound: React.FC<NotFoundProps> = props => {
   );
 };
 
-export default NotFound;
+export default React.memo(NotFound);

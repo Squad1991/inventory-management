@@ -7,4 +7,4 @@ const Card = styled(Box)({
   boxShadow: '0 0 10px rgba(0, 0, 0, .1)',
 });
 
-export default Card;
+export default React.memo(Card);

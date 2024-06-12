@@ -12,4 +12,4 @@ const Center: React.FC<PropsWithChildren> = ({ children }) => {
   return <Box css={CenterStyles}>{children}</Box>;
 };
 
-export default Center;
+export default React.memo(Center);

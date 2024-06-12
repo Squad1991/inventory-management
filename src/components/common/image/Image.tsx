@@ -18,4 +18,4 @@ const Image: React.FC<ImageProps> = props => {
   return <img src={src} {...rest} width={width} onError={handleImageError} />;
 };
 
-export default Image;
+export default React.memo(Image);

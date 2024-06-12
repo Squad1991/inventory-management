@@ -14,4 +14,4 @@ const SimilarMovies: React.FC<SimilarMoviesProps> = props => {
   return <MovieList movies={movies} />;
 };
 
-export default SimilarMovies;
+export default React.memo(SimilarMovies);

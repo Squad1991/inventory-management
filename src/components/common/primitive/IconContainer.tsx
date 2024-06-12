@@ -6,4 +6,4 @@ const IconContainer = styled(Box)({
   gap: '0.5rem',
 });
 
-export default IconContainer;
+export default React.memo(IconContainer);

@@ -19,4 +19,4 @@ const TextOverflow: React.FC<TextOverflowProps> = ({ text, testId }) => {
   );
 };
 
-export default TextOverflow;
+export default React.memo(TextOverflow);

@@ -17,4 +17,4 @@ const WorkInProgress: React.FC<WorkInProgressProps> = props => {
   );
 };
 
-export default WorkInProgress;
+export default React.memo(WorkInProgress);

@@ -29,4 +29,4 @@ const MovieReviews: React.FC<MovieReviewsProps> = props => {
   );
 };
 
-export default MovieReviews;
+export default React.memo(MovieReviews);

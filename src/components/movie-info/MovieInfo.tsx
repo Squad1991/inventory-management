@@ -60,4 +60,4 @@ const MovieInfo: React.FC<MovieInfoProps> = props => {
   );
 };
 
-export default MovieInfo;
+export default React.memo(MovieInfo);

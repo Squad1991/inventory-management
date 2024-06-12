@@ -75,4 +75,4 @@ const MovieCard: React.FC<MovieCardProps> = props => {
   );
 };
 
-export default MovieCard;
+export default React.memo(MovieCard);

@@ -24,4 +24,4 @@ const MovieList: React.FC<MovieListProps> = ({ movies, testId }) => {
   );
 };
 
-export default MovieList;
+export default React.memo(MovieList);
