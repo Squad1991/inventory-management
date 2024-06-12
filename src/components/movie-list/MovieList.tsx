@@ -6,6 +6,7 @@ import { Movie } from '~src/routes/home/types';
 
 interface MovieListProps extends ComponentPropsWithTestId {
   movies: Movie[];
+  onMovieClick: (movie: Movie) => void;
 }
 
 const MovieListWrapper = styled.ul({
@@ -14,11 +15,15 @@ const MovieListWrapper = styled.ul({
   gap: '1rem',
 });
 
-const MovieList: React.FC<MovieListProps> = ({ movies, testId }) => {
+/**
+ * Render list of movies cards.
+ */
+
+const MovieList: React.FC<MovieListProps> = ({ movies, testId, onMovieClick }) => {
   return (
     <MovieListWrapper data-testid={testId}>
       {movies.map((movie, index) => (
-        <MovieCard testId={`movie-${movie.id}`} movie={movie} key={index} />
+        <MovieCard onClick={onMovieClick} testId={`movie-${movie.id}`} movie={movie} key={index} />
       ))}
     </MovieListWrapper>
   );

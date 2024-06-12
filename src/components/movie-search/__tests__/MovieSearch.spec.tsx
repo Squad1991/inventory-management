@@ -3,13 +3,14 @@ import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import selectEvent from 'react-select-event';
 import { vi } from 'vitest';
-import MovieSearch from '../MovieSearch';
+import MovieSearch from '~src/components/movie-search/MovieSearch';
 
 describe('MovieSearch', () => {
+  const onChangeMock = vi.fn();
   it('should render the component', () => {
     render(
       <MemoryRouter>
-        <MovieSearch />
+        <MovieSearch onChange={onChangeMock} />
       </MemoryRouter>,
     );
     const movieSearchElement = screen.getByRole('combobox');
@@ -18,7 +19,7 @@ describe('MovieSearch', () => {
   it('should open menu and show message when no text is provided', () => {
     render(
       <MemoryRouter initialEntries={['/']}>
-        <MovieSearch />
+        <MovieSearch onChange={onChangeMock} />
       </MemoryRouter>,
     );
     const input = screen.getByRole('combobox');

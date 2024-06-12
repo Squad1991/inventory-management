@@ -1,6 +1,5 @@
 import { css, styled } from '@compiled/react';
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useCallback } from 'react';
 import Rating from '~src/components/common/movie-rating/MovieRating';
 import Votes from '~src/components/common/movie-votes/MovieVotes';
 import Box from '~src/components/common/primitive/Box';
@@ -14,6 +13,7 @@ import { Movie } from '~src/routes/home/types';
 
 interface MovieCardProps extends ComponentPropsWithTestId {
   movie: Movie;
+  onClick?: (movie: Movie) => void;
 }
 
 const MovieCardContainer = styled.li({
@@ -43,19 +43,23 @@ const MoviePosterContainerStyles = css({
   overflow: 'hidden',
 });
 
+/**
+ * Renders a movie card with the movie poster, rating, votes and release date.
+ */
+
 const MovieCard: React.FC<MovieCardProps> = props => {
   const {
     testId,
+    onClick,
     movie: { title, vote_count, vote_average, poster_path, release_date, id },
   } = props;
-  const navigate = useNavigate();
 
-  const goToMovieInfoPage = () => {
-    navigate(`/movie/${id}`, { preventScrollReset: false });
-  };
+  const onMovieClick = useCallback(() => {
+    onClick?.(props.movie);
+  }, [props.movie]);
 
   return (
-    <MovieCardContainer data-testid={testId} onClick={goToMovieInfoPage}>
+    <MovieCardContainer data-testid={testId} onClick={onMovieClick}>
       <Box css={MoviePosterContainerStyles}>
         <MoviePoster width={250} height={200} src={poster_path} alt={title} />
       </Box>

@@ -1,6 +1,7 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
 import { RouterProvider, createMemoryRouter, defer } from 'react-router-dom';
+import { vi } from 'vitest';
 import Index from '../index';
 
 describe('Index Component', () => {
@@ -35,10 +36,15 @@ describe('Index Component', () => {
     });
   });
   it('renders movies', async () => {
+    vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
     render(
       <RouterProvider
         router={createMemoryRouter(
           [
+            {
+              path: '/movie/:id',
+              Component: () => <div data-testid="movie-info">Movie</div>,
+            },
             {
               path: '/',
               index: true,
@@ -79,5 +85,7 @@ describe('Index Component', () => {
     await waitFor(() => {
       expect(screen.getByTestId('movie-1')).toBeInTheDocument();
     });
+    fireEvent.click(screen.getByTestId('movie-1'));
+    expect(screen.getByTestId('movie-info')).toBeInTheDocument();
   });
 });

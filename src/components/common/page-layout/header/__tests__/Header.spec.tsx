@@ -1,13 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
+import { vi } from 'vitest';
 import Header from '../Header';
 
 describe('Header', () => {
   test('displays correct title', () => {
     render(
       <MemoryRouter>
-        <Header />
+        <Header onMovieSelect={vi.fn()} />
       </MemoryRouter>,
     );
     const titleElement = screen.getByText('Movie Database');

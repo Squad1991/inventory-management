@@ -3,6 +3,7 @@ import { FaUserCircle } from 'react-icons/fa';
 import MoviePoster from '~src/components/movie-poster/MoviePoster';
 
 interface AvatarProps extends React.HTMLAttributes<HTMLImageElement> {
+  /** The image path to be displayed. */
   imageUrl: string;
   size?: number;
 }

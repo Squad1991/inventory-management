@@ -1,14 +1,16 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import { RouterProvider, createMemoryRouter } from 'react-router-dom';
+import { vi } from 'vitest';
 import SimilarMovies from '../SimilarMovies';
 
 describe('SimilarMovies', () => {
   it('renders empty when no similar movies', () => {
-    render(<SimilarMovies movies={[]} />);
+    render(<SimilarMovies onClick={() => {}} movies={[]} />);
     expect(screen.getByTestId('no-similar-movies')).toBeInTheDocument();
   });
   it('renders movies', () => {
+    const onClick = vi.fn();
     render(
       <RouterProvider
         router={createMemoryRouter([
@@ -16,6 +18,7 @@ describe('SimilarMovies', () => {
             index: true,
             Component: () => (
               <SimilarMovies
+                onClick={onClick}
                 movies={[
                   {
                     id: 1,
@@ -42,9 +45,9 @@ describe('SimilarMovies', () => {
             path: '/movie/1',
           },
         ])}
-       />,
+      />,
     );
     fireEvent.click(screen.getByTestId('movie-1'));
-    expect(screen.getByText('Movie 1')).toBeInTheDocument();
+    expect(onClick).toHaveBeenCalled();
   });
 });

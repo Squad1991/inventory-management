@@ -1,11 +1,13 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
+import { vi } from 'vitest';
 import { Movie } from '~src/routes/home/types';
 import MovieList from '../MovieList';
 
 describe('MovieList', () => {
   it('renders the movie list component', () => {
+    const onMovieClick = vi.fn();
     const movies: Movie[] = [
       {
         adult: false,
@@ -42,10 +44,12 @@ describe('MovieList', () => {
     ];
     render(
       <MemoryRouter>
-        <MovieList movies={movies} />
+        <MovieList onMovieClick={onMovieClick} movies={movies} />
       </MemoryRouter>,
     );
 
     ['movie-1', 'movie-2'].forEach(movie => expect(screen.getByTestId(movie)).toBeInTheDocument());
+    fireEvent.click(screen.getByTestId('movie-1'));
+    expect(onMovieClick).toHaveBeenCalledWith(movies[0]);
   });
 });

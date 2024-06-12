@@ -70,3 +70,7 @@
 ## Unit testing
 
 All unit tests reside inside `(component|feature|utils)/__tests__` folder. For unit testing, wherever there is pure component a simple snapshot test is added.
+
+## E2E
+
+To be implemented

@@ -1,14 +1,7 @@
 import { css } from '@compiled/react';
 import React from 'react';
 import { FaCameraRetro } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
-import {
-  CSSObjectWithLabel,
-  DropdownIndicatorProps,
-  OptionProps,
-  SingleValue,
-  components,
-} from 'react-select';
+import { CSSObjectWithLabel, DropdownIndicatorProps, OptionProps, components } from 'react-select';
 import AsyncSelect from 'react-select/async';
 import Box from '~src/components/common/primitive/Box';
 import Stack from '~src/components/common/primitive/Stack';
@@ -71,6 +64,7 @@ const CustomOption = (props: OptionProps<MovieOption>) => {
         borderBlockEnd: '1px solid #e0e0e0',
         paddingBlockStart: '0.5rem',
         paddingInlineStart: '0.5rem',
+        gap: '0.5rem',
         paddingBlockEnd: '0.5rem',
         cursor: 'pointer',
       })}
@@ -78,6 +72,7 @@ const CustomOption = (props: OptionProps<MovieOption>) => {
       {...props}
     >
       <MoviePoster
+        fallback={null}
         width={70}
         height={70}
         alt={props.data.value.original_title}
@@ -93,8 +88,16 @@ const CustomOption = (props: OptionProps<MovieOption>) => {
   );
 };
 
-const MovieSearch = () => {
-  const navigate = useNavigate();
+interface MovieSearchProps {
+  onChange: (movie: Movie) => void;
+}
+
+/**
+ * Allows to search for a movie by name.
+ */
+
+const MovieSearch: React.FC<MovieSearchProps> = props => {
+  const { onChange } = props;
 
   const loadMovie = async (inputValue: string, callback: (options: MovieOption[]) => void) => {
     if (!inputValue || inputValue.length < 3) {
@@ -106,10 +109,6 @@ const MovieSearch = () => {
       label: movie.title,
       value: movie,
     }));
-  };
-
-  const navigateToMovie = (option: SingleValue<MovieOption>) => {
-    navigate(`/movie/${option?.value.id}`);
   };
 
   return (
@@ -128,7 +127,7 @@ const MovieSearch = () => {
           ? 'Please enter at least 3 characters to search for a movie'
           : 'No movies found'
       }
-      onChange={navigateToMovie}
+      onChange={newValue => newValue && onChange(newValue.value)}
     />
   );
 };

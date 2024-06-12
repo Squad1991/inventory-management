@@ -5,6 +5,7 @@ import Logo from '~src/components/common/logo/Logo';
 import IconContainer from '~src/components/common/primitive/IconContainer';
 import Inline from '~src/components/common/primitive/Inline';
 import MovieSearch from '~src/components/movie-search/MovieSearch';
+import { Movie } from '~src/routes/home/types';
 
 const HeaderWrapper = styled.header({
   display: 'flex',
@@ -17,12 +18,20 @@ const HeaderWrapper = styled.header({
   justifyContent: 'space-between',
 });
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onMovieSelect: (movie: Movie) => void;
+}
+
+/**
+ * Render the header component with the logo, search bar and user icons.
+ */
+
+const Header: React.FC<HeaderProps> = ({ onMovieSelect }) => {
   return (
     <HeaderWrapper>
       <Logo />
       <Inline css={css({ width: '28rem' })}>
-        <MovieSearch />
+        <MovieSearch onChange={onMovieSelect} />
       </Inline>
       <IconContainer>
         <FaBell data-testid="bell-icon" size={16} />

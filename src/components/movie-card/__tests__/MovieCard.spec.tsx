@@ -1,6 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter, RouterProvider, createMemoryRouter } from 'react-router-dom';
+import { vi } from 'vitest';
 import MovieCard from '~src/components/movie-card/MovieCard';
 import { Movie } from '~src/routes/home/types';
 
@@ -33,6 +34,7 @@ describe('MovieCard', () => {
     expect(titleElement).toHaveTextContent(movie.title);
   });
   it('should open movie details page', () => {
+    const onClick = vi.fn();
     const movie: Movie = {
       adult: false,
       backdrop_path: '/path',
@@ -49,13 +51,13 @@ describe('MovieCard', () => {
       vote_count: 1,
     };
 
-    const { getByTestId, queryByTestId } = render(
+    const { getByTestId } = render(
       <RouterProvider
         router={createMemoryRouter([
           {
             path: '/',
             index: true,
-            element: <MovieCard movie={movie} />,
+            element: <MovieCard onClick={onClick} movie={movie} />,
           },
           {
             path: '/movie/:id',
@@ -64,9 +66,8 @@ describe('MovieCard', () => {
         ])}
       />,
     );
-    expect(queryByTestId('movie-details')).not.toBeInTheDocument();
     const titleElement = getByTestId('movie-title');
     fireEvent.click(titleElement);
-    expect(getByTestId('movie-details')).toBeInTheDocument();
+    expect(onClick).toHaveBeenCalled();
   });
 });
