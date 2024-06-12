@@ -8,7 +8,7 @@ interface AvatarProps extends React.HTMLAttributes<HTMLImageElement> {
 }
 
 /**
- * Renders the avatar component. This is specific to the application.
+ * Renders the avatar component. This renders the image hosted on movie db site.
  * Renders fallback icon if image is not available.
  */
 

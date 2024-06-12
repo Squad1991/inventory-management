@@ -11,7 +11,6 @@ import NotFoundPage from '~src/routes/NotFoundPage';
 
 const RootErrorBoundary = () => {
   const error = useRouteError();
-
   if (isRouteErrorResponse(error)) {
     if (error.status === 404) {
       return <NotFoundPage />;

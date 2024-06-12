@@ -1,3 +1,7 @@
+/**
+ * Tells how long ago the date was in human readable format (e.g. 1 hour ago)
+ */
+
 export function timeAgo(input: Date | string | number) {
   const date = input instanceof Date ? input : new Date(input);
   const formatter = new Intl.RelativeTimeFormat('en');
@@ -18,13 +22,19 @@ export function timeAgo(input: Date | string | number) {
       return formatter.format(Math.round(delta), rangeType);
     }
   }
+  return 'just now';
 }
 
+/** Formats the date in long format (e.g. 2022-01-01 => 1 January 2022) */
 export const formatDate = (date: Date) => {
   return new Intl.DateTimeFormat('en-GB', {
     dateStyle: 'long',
   }).format(date);
 };
+
+/**
+ * Formats the time in hours and minutes  (e.g. 115 minutes => 1h 55m)
+ */
 
 export function convertTimeInHoursAndMinutes(totalMinutes: number) {
   const hours = Math.floor(totalMinutes / 60);

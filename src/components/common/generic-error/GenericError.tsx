@@ -8,14 +8,19 @@ import Stack from '~src/components/common/primitive/Stack';
 
 type GenericErrorProps = React.ComponentProps<typeof Image>;
 
+/**
+ * Renders generic error component with a default message
+ */
+
 const SomethingWentWrong: React.FC<GenericErrorProps> = props => {
   return (
     <EmptyCard
+      testId="generic-error"
       message={
         <Stack css={css({ textAlign: 'center' })}>
           <Image height={'400rem'} src={SomethingWentWrongImg} {...props} />
           <Center>
-            <h2>We are working to get things up</h2>{' '}
+            <h2 data-testid="error-msg">We are working to get things up</h2>
           </Center>
         </Stack>
       }

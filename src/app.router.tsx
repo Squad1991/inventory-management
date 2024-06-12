@@ -20,6 +20,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: 'movies',
+        errorElement: <ErrorBoundary />,
         caseSensitive: true,
         loader: HomePageDataLoader,
         async lazy() {
@@ -29,6 +30,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: 'movies/recommended',
+        errorElement: <ErrorBoundary />,
         caseSensitive: true,
         async lazy() {
           const { default: RecommendedMovies } = await import('~src/routes/home/RecommendedMovies');
@@ -38,6 +40,7 @@ const appRouter = createBrowserRouter([
       {
         path: 'movies/trending',
         caseSensitive: true,
+        errorElement: <ErrorBoundary />,
         async lazy() {
           const { default: TrendingMovies } = await import('~src/routes/home/TrendingMovies');
           return { Component: TrendingMovies };

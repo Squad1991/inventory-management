@@ -9,6 +9,7 @@ const NotFoundPage: React.FC = () => {
   usePageTitle('Page or a resource your are looking for is not available');
   return (
     <EmptyCard
+      testId="not-found-page"
       message={
         <Stack>
           <NotFound width={'48rem'} height={'100%'} />

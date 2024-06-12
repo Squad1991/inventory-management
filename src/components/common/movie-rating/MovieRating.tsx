@@ -1,12 +1,18 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
 import IconContainer from '~src/components/common/primitive/IconContainer';
+import { ComponentPropsWithTestId } from '~src/components/common/utils/types';
 
-interface RatingProps {
+interface RatingProps extends ComponentPropsWithTestId {
+  /** Rating of the movie */
   rating: number;
+  /** Default to 10 */
   maxRating?: number;
-  testId?: string;
 }
+
+/**
+ * Rating component to display the rating of a movie
+ */
 
 const Rating: React.FC<RatingProps> = ({ rating, maxRating = 10, testId }) => {
   return (

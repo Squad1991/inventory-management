@@ -1,19 +1,15 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import React from 'react';
-import MovieGenres from '~src/components/genres/MovieGenres';
+import { MemoryRouter } from 'react-router-dom';
+import Logo from '~src/components/common/logo/Logo';
 
 describe('Logo', () => {
   it('should pass', async () => {
     const { container } = render(
-      <MovieGenres
-        genres={[
-          {
-            id: 1,
-            name: 'Action',
-          },
-        ]}
-      />,
+      <MemoryRouter>
+        <Logo />
+      </MemoryRouter>,
     );
     expect(await axe(container)).toHaveNoViolations();
   });
