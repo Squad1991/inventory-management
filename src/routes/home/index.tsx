@@ -21,7 +21,10 @@ const HomePage: React.FC = () => {
             movies?.results?.length ? (
               <MovieList movies={movies.results} />
             ) : (
-              <EmptyCard message={'No movies found. Please user search to find movies'} />
+              <EmptyCard
+                testId="no-movies"
+                message={'No movies found. Please user search to find movies'}
+              />
             )
           }
         </Await>

@@ -49,9 +49,11 @@ const MovieCard: React.FC<MovieCardProps> = props => {
     movie: { title, vote_count, vote_average, poster_path, release_date, id },
   } = props;
   const navigate = useNavigate();
+
   const goToMovieInfoPage = () => {
     navigate(`/movie/${id}`, { preventScrollReset: false });
   };
+
   return (
     <MovieCardContainer data-testid={testId} onClick={goToMovieInfoPage}>
       <Box css={MoviePosterContainerStyles}>

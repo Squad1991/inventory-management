@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
           <FaHome />
           <NavLink
             className={({ isActive, isPending }) =>
-              pathname === '/movies' && isActive ? 'active' : isPending ? 'pending' : ''
+              pathname === '/movies' && isActive ? 'active' : ''
             }
             to={'/movies'}
           >

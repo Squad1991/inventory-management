@@ -14,6 +14,6 @@ describe('MovieLoader', () => {
         request: new Request('http://localhost:3000/movie/1'),
         params: {},
       }),
-    ).toBeDefined();
+    ).rejects.toThrowWithMessage(Error, 'Movie ID is required');
   });
 });

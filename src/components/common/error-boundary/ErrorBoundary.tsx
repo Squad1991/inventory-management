@@ -1,7 +1,6 @@
 import React from 'react';
 import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
 import SomethingWentWrong from '~src/components/common/generic-error/GenericError';
-import Center from '~src/components/common/primitive/Center';
 import NotFoundPage from '~src/routes/NotFoundPage';
 
 /**
@@ -15,18 +14,18 @@ const RootErrorBoundary = () => {
     if (error.status === 404) {
       return <NotFoundPage />;
     }
+    /** Uncomment based on requirements */
+    // if (error.status === 401) {
+    //   return <Center>You aren't authorized to see this</Center>;
+    // }
 
-    if (error.status === 401) {
-      return <Center>You aren't authorized to see this</Center>;
-    }
+    // if (error.status === 503) {
+    //   return <Center>Looks like our API is down</Center>;
+    // }
 
-    if (error.status === 503) {
-      return <Center>Looks like our API is down</Center>;
-    }
-
-    if (error.status === 418) {
-      return <Center>🫖</Center>;
-    }
+    // if (error.status === 418) {
+    //   return <Center>🫖</Center>;
+    // }
   }
 
   return <SomethingWentWrong />;

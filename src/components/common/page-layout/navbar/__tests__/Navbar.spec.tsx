@@ -14,4 +14,12 @@ describe('Navbar', () => {
     expect(screen.getByText('Trending')).toBeInTheDocument();
     expect(screen.getByText('Recommended')).toBeInTheDocument();
   });
+  it('renders the navbar component', () => {
+    render(
+      <MemoryRouter initialEntries={['/movies']}>
+        <Navbar />
+      </MemoryRouter>,
+    );
+    expect(screen.getByText('Home').classList.contains('active')).toBeTrue();
+  });
 });

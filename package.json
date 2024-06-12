@@ -45,9 +45,9 @@
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.12.0",
     "@typescript-eslint/parser": "^7.12.0",
+    "@vitejs/plugin-react": "^4.3.1",
     "@vitest/coverage-istanbul": "^1.6.0",
     "@vitest/coverage-v8": "^1.6.0",
-    "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-eslint-plugin": "^5.1.1",
@@ -66,9 +66,10 @@
     "pinst": "^3.0.0",
     "prettier": "3.3.1",
     "process": "^0.11.10",
+    "react-select-event": "^5.5.1",
     "typescript-eslint": "^7.12.0",
-    "vitest": "^1.6.0",
-    "vite-tsconfig-paths": "^4.3.2"
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^1.6.0"
   },
   "dependencies": {
     "@compiled/react": "^0.17.2",
