@@ -14,7 +14,7 @@ export interface MovieInfoLoaderData {
 }
 
 const MovieInfoLoader = async ({ params }: LoaderFunctionArgs) => {
-  if (!params.id) {
+  if (params.id === undefined) {
     throw new Error('Movie ID is required');
   }
   const movieInfo = getMovieDetails({ id: params.id });

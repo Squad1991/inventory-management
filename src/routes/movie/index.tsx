@@ -25,6 +25,7 @@ const MovieInfoPage: React.FC = () => {
                 items={[
                   {
                     text: 'Home',
+                    testId: 'home-page-breadcrumb',
                     onClick: () => {
                       navigate('/');
                     },

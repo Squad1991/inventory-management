@@ -17,7 +17,7 @@ describe('ErrorBoundary', () => {
             },
           },
         ])}
-      ></RouterProvider>,
+      />,
     );
     expect(screen.getByTestId('generic-error')).toBeInTheDocument();
   });
@@ -34,7 +34,7 @@ describe('ErrorBoundary', () => {
             },
           },
         ])}
-      ></RouterProvider>,
+      />,
     );
     expect(screen.getByTestId('not-found-page')).toBeInTheDocument();
   });

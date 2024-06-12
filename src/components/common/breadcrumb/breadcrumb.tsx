@@ -29,7 +29,11 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
     <nav aria-label="breadcrumb">
       <ol>
         {items.map((item, index) => (
-          <BreadcrumbItem data-testid={item.testId} onClick={item.onClick} key={item.text}>
+          <BreadcrumbItem
+            data-testid={item.testId}
+            onClick={item.onClick}
+            key={`${index}-${item.text}`}
+          >
             {item.text}
           </BreadcrumbItem>
         ))}

@@ -18,7 +18,15 @@ interface MovieInfoProps {
 
 const MovieInfo: React.FC<MovieInfoProps> = props => {
   const {
-    movie: { original_title, backdrop_path, genres, vote_average, release_date, runtime, overview },
+    movie: {
+      original_title,
+      backdrop_path,
+      genres = [],
+      vote_average,
+      release_date,
+      runtime,
+      overview,
+    },
   } = props;
 
   return (

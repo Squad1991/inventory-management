@@ -8,18 +8,37 @@ exports[`EmptyCard > renders correctly with text msg 1`] = `
       <style
         data-cmpld="true"
       >
-        ._1bah1h6o{justify-content:center}._16jlkb7n{flex-grow:1}._1o9zkb7n{flex-shrink:1}._i0dlf1ug{flex-basis:0%}._4cvr1h6o{align-items:center}._4t3imry4{height:var(--_roksyz)}._1bsb9tg7{width:var(--_1ea5ebz)}
+        ._4t3imry4{height:var(--_roksyz)}._1bsb9tg7{width:var(--_1ea5ebz)}._16jlkb7n{flex-grow:1}._1o9zkb7n{flex-shrink:1}._i0dlf1ug{flex-basis:0%}
       </style>
       <style
         data-cmpld="true"
       >
-        ._1e0c1txw{display:flex}._2lx21bp4{flex-direction:column}
+        ._19itl2jy{border:1px solid #e0e0e0}._2rko1rrh{border-radius:.2rem}._16qsd8sd{box-shadow:0 0 10px rgba(0,0,0,.1)}
+      </style>
+      <style
+        data-cmpld="true"
+      >
+        ._1e0c1txw{display:flex}
       </style>
       <div
-        class="_1e0c1txw _2lx21bp4 _1bah1h6o _16jlkb7n _1o9zkb7n _i0dlf1ug _4cvr1h6o _4t3imry4 _1bsb9tg7"
+        class="_1e0c1txw _19itl2jy _2rko1rrh _16qsd8sd _4t3imry4 _1bsb9tg7 _16jlkb7n _1o9zkb7n _i0dlf1ug"
         style="--_roksyz: var(--c-, ); --_1ea5ebz: var(--c-, );"
       >
-        empty card
+        <style
+          data-cmpld="true"
+        >
+          ._1bah1h6o{justify-content:center}._ca0q12bs{padding-top:4rem}._u5f312bs{padding-right:4rem}._n3td12bs{padding-bottom:4rem}._19bv12bs{padding-left:4rem}._4cvr1h6o{align-items:center}
+        </style>
+        <style
+          data-cmpld="true"
+        >
+          ._2lx21bp4{flex-direction:column}
+        </style>
+        <div
+          class="_1e0c1txw _2lx21bp4 _1bah1h6o _16jlkb7n _1o9zkb7n _i0dlf1ug _ca0q12bs _u5f312bs _n3td12bs _19bv12bs _4cvr1h6o"
+        >
+          empty card
+        </div>
       </div>
     </div>
   </body>,
@@ -27,18 +46,37 @@ exports[`EmptyCard > renders correctly with text msg 1`] = `
     <style
       data-cmpld="true"
     >
-      ._1bah1h6o{justify-content:center}._16jlkb7n{flex-grow:1}._1o9zkb7n{flex-shrink:1}._i0dlf1ug{flex-basis:0%}._4cvr1h6o{align-items:center}._4t3imry4{height:var(--_roksyz)}._1bsb9tg7{width:var(--_1ea5ebz)}
+      ._4t3imry4{height:var(--_roksyz)}._1bsb9tg7{width:var(--_1ea5ebz)}._16jlkb7n{flex-grow:1}._1o9zkb7n{flex-shrink:1}._i0dlf1ug{flex-basis:0%}
     </style>
     <style
       data-cmpld="true"
     >
-      ._1e0c1txw{display:flex}._2lx21bp4{flex-direction:column}
+      ._19itl2jy{border:1px solid #e0e0e0}._2rko1rrh{border-radius:.2rem}._16qsd8sd{box-shadow:0 0 10px rgba(0,0,0,.1)}
+    </style>
+    <style
+      data-cmpld="true"
+    >
+      ._1e0c1txw{display:flex}
     </style>
     <div
-      class="_1e0c1txw _2lx21bp4 _1bah1h6o _16jlkb7n _1o9zkb7n _i0dlf1ug _4cvr1h6o _4t3imry4 _1bsb9tg7"
+      class="_1e0c1txw _19itl2jy _2rko1rrh _16qsd8sd _4t3imry4 _1bsb9tg7 _16jlkb7n _1o9zkb7n _i0dlf1ug"
       style="--_roksyz: var(--c-, ); --_1ea5ebz: var(--c-, );"
     >
-      empty card
+      <style
+        data-cmpld="true"
+      >
+        ._1bah1h6o{justify-content:center}._ca0q12bs{padding-top:4rem}._u5f312bs{padding-right:4rem}._n3td12bs{padding-bottom:4rem}._19bv12bs{padding-left:4rem}._4cvr1h6o{align-items:center}
+      </style>
+      <style
+        data-cmpld="true"
+      >
+        ._2lx21bp4{flex-direction:column}
+      </style>
+      <div
+        class="_1e0c1txw _2lx21bp4 _1bah1h6o _16jlkb7n _1o9zkb7n _i0dlf1ug _ca0q12bs _u5f312bs _n3td12bs _19bv12bs _4cvr1h6o"
+      >
+        empty card
+      </div>
     </div>
   </div>,
   "debug": [Function],
