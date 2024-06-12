@@ -74,3 +74,7 @@ All unit tests reside inside `(component|feature|utils)/__tests__` folder. For u
 ## E2E
 
 To be implemented
+
+## Additional Information
+
+App is not made responsive. Also all accessibility aspects are not checked but tried to implement with possible semantic tags
