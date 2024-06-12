@@ -33,9 +33,9 @@
 ## Dependencies
 
 - Packaging
-  - [yarn](https://yarnpkg.com/)
+  - [yarn v1.22.19](https://yarnpkg.com/)
   - [husky](https://typicode.github.io/husky/)
-  - [Node 18](https://nodejs.org/en)
+  - [Node v18.18.1](https://nodejs.org/en)
 - Styling
   - [Compiled react](https://compiledcssinjs.com/)
 - Testing
