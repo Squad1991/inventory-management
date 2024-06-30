@@ -3,6 +3,8 @@
 ## How to run
 
 - Clone [repository](https://github.com/Squad1991/movie-database.git)
+- Get your API Key from https://www.themoviedb.org/settings/api
+- Update key [here ](https://github.com/Squad1991/movie-database/blob/main/src/components/common/utils/API.ts#L10)
 - `cd cloned-dir`
 - `yarn install`
 - `yarn start`
